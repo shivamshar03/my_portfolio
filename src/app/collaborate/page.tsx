@@ -2,6 +2,7 @@
 
 import { useState, FormEvent, ChangeEvent } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 
 interface FormData {
   name: string;
@@ -68,11 +69,21 @@ export default function CollaboratePage() {
     setSubmitStatus(null);
 
     try {
-      // Here you would implement the actual form submission
-      // Either using EmailJS or a server endpoint
-      
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Send collaboration request via EmailJS
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_COLLABORATION_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_COLLABORATION_TEMPLATE_ID as string,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          skills: formData.skills.join(', '),
+          project_idea: formData.projectIdea,
+          availability: formData.availability,
+          portfolio: formData.portfolio,
+          message: formData.message,
+        },
+        process.env.NEXT_PUBLIC_COLLABORATION_PUBLIC_KEY as string
+      );
 
       setSubmitStatus({
         success: true,
@@ -334,4 +345,4 @@ export default function CollaboratePage() {
       </motion.div>
     </div>
   );
-} 
+}

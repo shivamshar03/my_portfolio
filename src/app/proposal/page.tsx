@@ -2,6 +2,7 @@
 
 import { useState, FormEvent, ChangeEvent } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 
 interface FormData {
   name: string;
@@ -49,11 +50,22 @@ export default function ProjectProposalPage() {
     setSubmitStatus(null);
 
     try {
-      // Here you would implement the actual form submission
-      // Either using EmailJS or a server endpoint
-      
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Prepare the data for EmailJS
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_PROPOSAL_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_PROPOSAL_TEMPLATE_ID as string,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          project_title: formData.projectTitle,
+          project_type: formData.projectType,
+          budget: formData.budget,
+          deadline: formData.deadline,
+          description: formData.description,
+          // You can add more fields as needed
+        },
+        process.env.NEXT_PUBLIC_PROPOSAL_PUBLIC_KEY as string
+      );
 
       setSubmitStatus({
         success: true,
@@ -71,11 +83,11 @@ export default function ProjectProposalPage() {
         description: '',
         files: null,
       });
-      
+
       // Reset file input
       const fileInput = document.getElementById('files') as HTMLInputElement;
       if (fileInput) fileInput.value = '';
-      
+
     } catch (error) {
       setSubmitStatus({
         success: false,
@@ -245,18 +257,21 @@ export default function ProjectProposalPage() {
               >
                 Attach Files (Optional)
               </label>
-              <input
-                type="file"
-                id="files"
-                name="files"
-                onChange={handleFileChange}
-                multiple
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
-              />
+
+              <button                           
+                type="button"                  
+                onClick={() => window.open('https://docs.google.com/forms/d/1simUXUbH3jTiVGxjFr96paYYK7sV0OdD0wc9V7jLXSE/viewform', '_blank')}
+                className="px-6 py-3 bg-gray-300 dark:bg-gray-900 hover:bg-gray-500 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md transition-colors"
+              >
+                Open Google Form
+              </button>
+          
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                 Max 5MB. Accepted formats: PDF, DOC, DOCX, JPG, PNG
               </p>
+              
             </div>
+
 
             <button
               type="submit"
@@ -268,11 +283,10 @@ export default function ProjectProposalPage() {
 
             {submitStatus && (
               <div
-                className={`mt-4 p-4 rounded-md ${
-                  submitStatus.success
+                className={`mt-4 p-4 rounded-md ${submitStatus.success
                     ? 'bg-green-50 text-green-800 dark:bg-green-900 dark:text-green-200'
                     : 'bg-red-50 text-red-800 dark:bg-red-900 dark:text-red-200'
-                }`}
+                  }`}
               >
                 {submitStatus.message}
               </div>
@@ -282,4 +296,4 @@ export default function ProjectProposalPage() {
       </motion.div>
     </div>
   );
-} 
+}

@@ -37,16 +37,16 @@ export default function ContactPage() {
     setSubmitStatus(null);
 
     try {
-      // Replace with your actual EmailJS service, template, and user IDs
+      // Use environment variables for EmailJS service, template, and public key
       await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        process.env.NEXT_PUBLIC_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_CONTACT_TEMPLATE_ID as string,
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
         },
-        'YOUR_PUBLIC_KEY'
+        process.env.NEXT_PUBLIC_PUBLIC_KEY as string
       );
 
       setSubmitStatus({
@@ -102,7 +102,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-gray-600 dark:text-gray-400 text-sm">Phone</p>
-                  <p className="font-medium">+91 (Contact Number)</p>
+                  <p className="font-medium">+91 6266061914</p>
                 </div>
               </div>
 
@@ -137,7 +137,7 @@ export default function ContactPage() {
                   <FaGithub className="text-gray-800 dark:text-gray-200 text-xl" />
                 </a>
                 <a
-                  href="#"
+                  href="https://x.com/ShivamShar03"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full hover:bg-blue-100 dark:hover:bg-blue-900 transition-colors"
@@ -147,6 +147,21 @@ export default function ContactPage() {
               </div>
             </div>
           </motion.div>
+         <motion.div
+  className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md mt-6"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+>
+  <h3 className="text-xl font-semibold mb-2 text-purple-600 dark:text-purple-300">
+    🚀 Free 1:1 Mentorship
+  </h3>
+  <p className="text-m text-gray-600 dark:text-white">
+    Looking for guidance or stuck with something? I offer free 1:1 mentorship sessions.
+    Just mention <strong>"Mentorship"</strong> in your message above — and I’ll reach out!
+  </p>
+</motion.div>
+
         </div>
 
         <motion.div
@@ -234,8 +249,10 @@ export default function ContactPage() {
               </div>
             )}
           </form>
+         
         </motion.div>
       </div>
+      
     </div>
   );
-} 
+}

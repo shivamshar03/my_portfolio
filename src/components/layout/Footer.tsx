@@ -36,7 +36,7 @@ export default function Footer() {
                 <FaLinkedin className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://x.com/ShivamShar03"
                 target="_blank"
                 rel="noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
@@ -44,7 +44,7 @@ export default function Footer() {
                 <FaTwitter className="w-5 h-5" />
               </a>
               <a
-                href="mailto:shivamshar0310@gmail.com"
+                href="mailto:shivamsharma.exe@gmail.com"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
                 <FaEnvelope className="w-5 h-5" />
@@ -103,7 +103,7 @@ export default function Footer() {
                   href="mailto:shivamshar0310@gmail.com"
                   className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
-                  shivamshar0310@gmail.com
+                  shivamsharma.exe@gmail.com
                 </a>
               </li>
             </ul>
