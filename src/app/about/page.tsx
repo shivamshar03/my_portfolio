@@ -13,9 +13,13 @@ export default function AboutPage() {
             {/* profile picture */}
             <div className="flex-shrink-0">
               <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-blue-600 dark:border-blue-400 shadow-lg group-hover:scale-105 transition-transform duration-300">
-                <img
+                <Image
                   src="/images/shivambg.jpg"
+                  alt="Shivam Sharma Background"
+                  width={160}
+                  height={160}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
             </div>
