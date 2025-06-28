@@ -158,7 +158,7 @@ export default function ContactPage() {
   </h3>
   <p className="text-m text-gray-600 dark:text-white">
     Looking for guidance or stuck with something? I offer free 1:1 mentorship sessions.
-    Just mention <strong>"Mentorship"</strong> in your message above — and I’ll reach out!
+    Just mention <strong>&quot;Mentorship&quot;</strong> in your message above — and I’ll reach out!
   </p>
 </motion.div>
 
