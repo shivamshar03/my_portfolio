@@ -39,18 +39,12 @@ export default function ProjectProposalPage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { files } = e.target;
-    setFormData((prev) => ({ ...prev, files }));
-  };
-
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
 
     try {
-      // Prepare the data for EmailJS
       await emailjs.send(
         process.env.NEXT_PUBLIC_PROPOSAL_SERVICE_ID as string,
         process.env.NEXT_PUBLIC_PROPOSAL_TEMPLATE_ID as string,
@@ -62,7 +56,6 @@ export default function ProjectProposalPage() {
           budget: formData.budget,
           deadline: formData.deadline,
           description: formData.description,
-          // You can add more fields as needed
         },
         process.env.NEXT_PUBLIC_PROPOSAL_PUBLIC_KEY as string
       );
@@ -72,7 +65,6 @@ export default function ProjectProposalPage() {
         message: 'Thank you! Your project proposal has been received. I will contact you soon.',
       });
 
-      // Reset form
       setFormData({
         name: '',
         email: '',
@@ -84,7 +76,6 @@ export default function ProjectProposalPage() {
         files: null,
       });
 
-      // Reset file input
       const fileInput = document.getElementById('files') as HTMLInputElement;
       if (fileInput) fileInput.value = '';
 
@@ -109,17 +100,14 @@ export default function ProjectProposalPage() {
       >
         <h1 className="text-4xl font-bold mb-4">Submit a Project Proposal</h1>
         <p className="text-gray-600 dark:text-gray-400 mb-8">
-          Have a project in mind? Fill out the form below and I'll get back to you as soon as possible with a free consultation.
+          Have a project in mind? Fill out the form below and I&apos;ll get back to you as soon as possible with a free consultation.
         </p>
 
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-                >
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Your Name *
                 </label>
                 <input
@@ -134,10 +122,7 @@ export default function ProjectProposalPage() {
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-                >
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Email Address *
                 </label>
                 <input
@@ -153,10 +138,7 @@ export default function ProjectProposalPage() {
             </div>
 
             <div>
-              <label
-                htmlFor="projectTitle"
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-              >
+              <label htmlFor="projectTitle" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Project Title *
               </label>
               <input
@@ -172,10 +154,7 @@ export default function ProjectProposalPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div>
-                <label
-                  htmlFor="projectType"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-                >
+                <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Project Type *
                 </label>
                 <select
@@ -195,10 +174,7 @@ export default function ProjectProposalPage() {
               </div>
 
               <div>
-                <label
-                  htmlFor="budget"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-                >
+                <label htmlFor="budget" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Budget (USD) *
                 </label>
                 <input
@@ -214,10 +190,7 @@ export default function ProjectProposalPage() {
               </div>
 
               <div>
-                <label
-                  htmlFor="deadline"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-                >
+                <label htmlFor="deadline" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Deadline
                 </label>
                 <input
@@ -232,10 +205,7 @@ export default function ProjectProposalPage() {
             </div>
 
             <div>
-              <label
-                htmlFor="description"
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-              >
+              <label htmlFor="description" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Project Description *
               </label>
               <textarea
@@ -251,27 +221,25 @@ export default function ProjectProposalPage() {
             </div>
 
             <div>
-              <label
-                htmlFor="files"
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-              >
+              <label htmlFor="files" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Attach Files (Optional)
               </label>
-
-              <button                           
-                type="button"                  
-                onClick={() => window.open('https://docs.google.com/forms/d/1simUXUbH3jTiVGxjFr96paYYK7sV0OdD0wc9V7jLXSE/viewform', '_blank')}
+              <button
+                type="button"
+                onClick={() =>
+                  window.open(
+                    'https://docs.google.com/forms/d/1simUXUbH3jTiVGxjFr96paYYK7sV0OdD0wc9V7jLXSE/viewform',
+                    '_blank'
+                  )
+                }
                 className="px-6 py-3 bg-gray-300 dark:bg-gray-900 hover:bg-gray-500 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md transition-colors"
               >
                 Open Google Form
               </button>
-          
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                 Max 5MB. Accepted formats: PDF, DOC, DOCX, JPG, PNG
               </p>
-              
             </div>
-
 
             <button
               type="submit"
@@ -283,10 +251,11 @@ export default function ProjectProposalPage() {
 
             {submitStatus && (
               <div
-                className={`mt-4 p-4 rounded-md ${submitStatus.success
+                className={`mt-4 p-4 rounded-md ${
+                  submitStatus.success
                     ? 'bg-green-50 text-green-800 dark:bg-green-900 dark:text-green-200'
                     : 'bg-red-50 text-red-800 dark:bg-red-900 dark:text-red-200'
-                  }`}
+                }`}
               >
                 {submitStatus.message}
               </div>

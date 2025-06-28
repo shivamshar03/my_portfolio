@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  
+
   return (
     <footer className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-12">
       <div className="container mx-auto px-4">
@@ -15,9 +15,10 @@ export default function Footer() {
               <span className="text-gray-800 dark:text-white">Sharma</span>
             </Link>
             <p className="text-gray-600 dark:text-gray-400 mb-4 max-w-md">
-              Passionate software developer creating elegant solutions. 
-              Building tomorrow's technology today with a focus on AI/ML development and community leadership.
+              Passionate software developer creating elegant solutions.
+              Building tomorrow&apos;s technology today with a focus on AI/ML development and community leadership.
             </p>
+
             <div className="flex space-x-4">
               <a
                 href="https://github.com/shivamshar03"
@@ -44,7 +45,7 @@ export default function Footer() {
                 <FaTwitter className="w-5 h-5" />
               </a>
               <a
-                href="mailto:shivamsharma.exe@gmail.com"
+                href="mailto:shivamshar0310@gmail.com"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
                 <FaEnvelope className="w-5 h-5" />
@@ -103,7 +104,7 @@ export default function Footer() {
                   href="mailto:shivamshar0310@gmail.com"
                   className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
-                  shivamsharma.exe@gmail.com
+                  shivamshar0310@gmail.com
                 </a>
               </li>
             </ul>
@@ -134,4 +135,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-} 
+}
