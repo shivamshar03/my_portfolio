@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function AboutPage() {
   return (
     <div className="container mx-auto px-4 py-20 max-w-7xl">
@@ -157,10 +159,13 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto px-6">
           {/* Abhyudaya Card */}
           <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-2xl shadow-2xl p-10 flex flex-col items-center transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-sky-800 dark:hover:shadow-sky-900">
-            <img
+            <Image
               src="/images/Logo/abhyudaya.jpeg"
               alt="Abhyudaya Logo"
+              width={80}
+              height={80}
               className="w-20 h-20 rounded-full shadow-md object-cover border-4 border-sky-700 dark:border-sky-900 bg-white"
+              priority
             />
             <h3 className="text-2xl font-bold mb-4 text-center text-gray-900 dark:text-white">About Abhyudaya</h3>
             <p className="text-gray-700 dark:text-gray-300 text-center mb-6 leading-relaxed max-w-md">
@@ -181,10 +186,13 @@ export default function AboutPage() {
 
           {/* NexHub Card */}
           <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-2xl shadow-2xl p-10 flex flex-col items-center transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-violet-700 dark:hover:indigo-800">
-            <img
+            <Image
               src="/images/Logo/nexhub.jpeg"
               alt="NexHub Logo"
+              width={80}
+              height={80}
               className="w-20 h-20 rounded-full shadow-md object-cover border-4 border-indigo-700 dark:border-indigo-700 bg-white"
+              priority
             />
             <h3 className="text-2xl font-bold mb-4 text-center text-gray-900 dark:text-white">About NexHub</h3>
             <p className="text-gray-700 dark:text-gray-300 text-center mb-6 leading-relaxed max-w-md">
