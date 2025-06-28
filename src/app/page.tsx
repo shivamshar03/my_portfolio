@@ -9,39 +9,39 @@ import { useEffect, useState } from "react";
 
 const testimonials = [
   {
-    name: "Aarav Mehta",
-    role: "Software Engineer, TechCorp",
-    avatar: "/images/avatar1.jpg",
+    name: "Varnit Sharma",
+    role: "Software Developer, Ksolves India Ltd.",
+    avatar: "/images/testimonials/varnit.jpeg",
     quote:
       "Working with Shivam was a fantastic experience. His attention to detail and innovative thinking brought our project to life!",
   },
   {
-    name: "Priya Sharma",
-    role: "Community Lead, NexHub",
-    avatar: "/images/avatar2.jpg",
+    name: "Sanskar Choubey",
+    role: "Mentor, Abhyudaya Coding Club",
+    avatar: "/images/testimonials/sanskar.png",
     quote:
-      "Shivam's leadership at NexHub inspired everyone. His ability to connect people and drive results is unmatched.",
+      "Shivam's leadership at Abhyudaya inspired everyone. His ability to connect people and drive results is unmatched.",
   },
   {
-    name: "Rahul Verma",
-    role: "Founder, Abhyudaya",
-    avatar: "/images/avatar3.jpg",
+    name: "Trapti Sharma",
+    role: "Software Developer, Nitron ",
+    avatar: "/images/testimonials/trapti.png",
+    quote:
+      "Shivam's coding skills are exceptional. He consistently delivers high-quality work and is a great team player.",
+  },
+  {
+    name: "Tanay Nagde",
+    role: "Co-Founder, Abhyudaya Coding Club",
+    avatar: "/images/testimonials/tanay.jpeg",
     quote:
       "Abhyudaya's success owes much to Shivam's dedication and vision. He truly makes a difference wherever he goes.",
   },
   {
-    name: "Sneha Kapoor",
-    role: "Product Designer, Creatix",
-    avatar: "/images/avatar4.jpg",
+    name: "Vinay Borate",
+    role: "Software Engineer Intern",
+    avatar: "/images/testimonials/vinay.png",
     quote:
-      "Shivam's creativity and technical skills are top-notch. He brings fresh ideas and energy to every project.",
-  },
-  {
-    name: "Vikram Singh",
-    role: "Mentor, Open Source",
-    avatar: "/images/avatar5.jpg",
-    quote:
-      "A pleasure to mentor Shivam. His passion for open source and learning is inspiring.",
+      "Shivam's technical skills are top-notch. He consistently delivers high-quality work and is a pleasure to collaborate with.",
   },
 ];
 
@@ -280,11 +280,14 @@ export default function Home() {
                 <div
                   className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center border border-transparent transition-all duration-300 min-h-[340px]"
                 >
-                  <img
-                    src={testimonials[startIdx].avatar}
-                    alt={testimonials[startIdx].name}
-                    className="w-20 h-20 rounded-full border-4 border-blue-200 dark:border-blue-700 shadow mb-4 object-cover"
-                  />
+                  <div className="relative mb-4">
+                    <img
+                      src={testimonials[startIdx].avatar}
+                      alt={testimonials[startIdx].name}
+                      className="w-28 h-28 md:w-32 md:h-32 rounded-full border-8 border-blue-200 dark:border-blue-700 shadow-xl object-cover ring-4 ring-blue-400/30 dark:ring-blue-700/40 transition-all duration-300 bg-white dark:bg-gray-900"
+                    />
+                    <div className="absolute -bottom-2 right-2 w-6 h-6 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-full border-4 border-white dark:border-gray-800 shadow-lg"></div>
+                  </div>
                   <p className="text-gray-700 dark:text-gray-300 text-center mb-4 italic">
                     “{testimonials[startIdx].quote}”
                   </p>
