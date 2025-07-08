@@ -17,7 +17,7 @@ export const projects: Project[] = [
     "description": "Anaya3 is a multimodal AI assistant capable of understanding emotions from voice and facial expressions. It uses advanced NLP with LLMs, speech and facial emotion recognition, and generates empathetic, human-like responses.",
     "category": ["AI/ML", "NLP", "Computer Vision"],
     "techStack": ["Python", "Whisper", "gTTS", "LangChain", "DeepFace", "TensorFlow", "Keras", "Streamlit"],
-    "image": "/images/projects/anaya3.jpg",
+    "image": "./public/images/projects/anaya_ai.png",
     "githubUrl": "https://github.com/shivamshar03/Anaya3",
     "featured": true
   },
@@ -27,7 +27,7 @@ export const projects: Project[] = [
     "description": "A tool that automates the creation of professional emails using predefined templates and user inputs, enhancing productivity and communication efficiency.",
     "category": ["Web Dev", "Automation"],
     "techStack": ["JavaScript", "HTML", "CSS", "Node.js"],
-    "image": "/images/projects/email-generator.jpg",
+    "image": "/images/projects/email_generator.png",
     "githubUrl": "https://github.com/shivamshar03/email-generator",
     "featured": true
   },
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     "description": "Applies artistic sketch filters to images, transforming photos into pencil sketch-like artworks using computer vision techniques.",
     "category": ["AI/ML", "Computer Vision"],
     "techStack": ["Python", "OpenCV", "NumPy"],
-    "image": "/images/projects/sketch-filter.jpg",
+    "image": "/images/projects/live-sketch.png",
     "githubUrl": "https://github.com/shivamshar03/sketch-filter",
     "featured": true
   },
