@@ -326,7 +326,7 @@ export const projects: Project[] = [
     "description": "A tool for automatically analyzing and shortlisting resumes based on job descriptions.",
     "category": ["AI/ML", "NLP"],
     "techStack": ["Python", "Pandas", "NLP"],
-    "image": "/images/projects/resume-screening.jpeg",
+    "image": "/images/projects/resume_screening.jpeg",
     "githubUrl": "https://github.com/shivamshar03/Resume-Screening-Assistance",
     "featured": false
   },
