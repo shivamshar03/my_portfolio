@@ -113,11 +113,12 @@ export const projects: Project[] = [
   {
     "id": 12,
     "title": "Portfolio Website",
+
     "description": "My personal portfolio website showcasing my projects and skills.",
     "category": ["Web Dev"],
     "techStack": ["HTML", "CSS", "JavaScript"],
     "image": "/images/projects/portfolio.png",
-    "githubUrl": "https://github.com/shivamshar03/portfolio-website",
+    "githubUrl": "https://github.com/shivamshar03/my_portfolio",
     "demoUrl": "https://shivam-sharma.vercel.app/",
     "featured": false
   },
@@ -127,8 +128,19 @@ export const projects: Project[] = [
     "description": "Generates images from textual prompts using deep learning and NLP models. Built for a hackathon challenge.",
     "category": ["AI/ML", "Computer Vision", "Hackathons"],
     "techStack": ["Python", "TensorFlow", "NLP", "Computer Vision"],
-    "image": "/images/projects/text-image.jpg",
+    "image": "/images/projects/not_found.gif",
     "githubUrl": "https://github.com/shivamshar03/text-to-image-",
+    "featured": false
+  },
+    {
+    "id": 13,
+    "title": "CodeX Community Website",
+    "description": "The official website for the codeX community, built using React.js.",
+    "category": ["Web Dev"],
+    "techStack": ["React", "JavaScript", "HTML", "CSS"],
+    "image": "/images/projects/codeX.PNG",
+    "githubUrl": "https://github.com/shivamshar03/nexhub-community-website",
+    "demoUrl": "https://nexhubcommunity.vercel.app/", 
     "featured": false
   },
   {
@@ -137,21 +149,12 @@ export const projects: Project[] = [
     "description": "A classic ping pong game developed using the Kivy framework in Python.",
     "category": ["Game Dev"],
     "techStack": ["Python", "Kivy"],
-    "image": "/images/projects/ping-pong.jpg",
+    "image": "/images/projects/not_found2.gif",
     "githubUrl": "https://github.com/shivamshar03/ping-pong-game",
     "featured": false
   },
 
-  {
-    "id": 13,
-    "title": "CodeX Community Website",
-    "description": "The official website for the codeX community, built using React.js.",
-    "category": ["Web Dev"],
-    "techStack": ["React", "JavaScript", "HTML", "CSS"],
-    "image": "/images/projects/codex-website.jpg",
-    "githubUrl": "https://github.com/shivamshar03/codex-website",
-    "featured": false
-  },
+
 
   {
     "id": 8,
@@ -159,7 +162,7 @@ export const projects: Project[] = [
     "description": "A Python-based chat application powered by AI to simulate intelligent conversations.",
     "category": ["AI/ML", "Chatbots"],
     "techStack": ["Python", "Flask", "HTML", "CSS", "JavaScript"],
-    "image": "/images/projects/ai-chat-app.jpg",
+    "image": "/images/projects/conversational_ai.png",
     "githubUrl": "https://github.com/shivamshar03/AI-Chat-App",
     "featured": false
   },
@@ -169,17 +172,17 @@ export const projects: Project[] = [
     "description": "Voice-enabled AI chat app that converts voice to text and interacts using intelligent responses.",
     "category": ["AI/ML", "NLP", "Voice Interfaces"],
     "techStack": ["Python", "SpeechRecognition", "gTTS", "Flask"],
-    "image": "/images/projects/ai-voice-chat-app.jpg",
+    "image": "/images/projects/not_found3.gif",
     "githubUrl": "https://github.com/shivamshar03/AI-Voice-Chat-app",
     "featured": false
   },
   {
     "id": 17,
-    "title": "Anaya3 Voice Voice",
-    "description": "A voice-to-voice extension of Anaya3 that captures speech, interprets it via LLM, and responds with generated voice.",
+    "title": "Anaya2 Voice Voice",
+    "description": "A voice-to-voice extension of Anaya2 that captures speech, interprets it via LLM, and responds with generated voice.",
     "category": ["AI/ML", "Voice Interfaces"],
     "techStack": ["Python", "gTTS", "SpeechRecognition", "LangChain"],
-    "image": "/images/projects/anaya3-voice-voice.jpg",
+    "image": "/images/projects/anaya_ai.png",
     "githubUrl": "https://github.com/shivamshar03/Anaya3-voice-voice",
     "featured": false
   },
@@ -189,7 +192,7 @@ export const projects: Project[] = [
     "description": "A real-time chat application that lets users connect anonymously using Python sockets.",
     "category": ["Networking", "Web Dev"],
     "techStack": ["Python", "Socket Programming", "Tkinter"],
-    "image": "/images/projects/anonymous-chat.jpg",
+    "image": "/images/projects/annonymous.png",
     "githubUrl": "https://github.com/shivamshar03/Anonymous-chat-room",
     "featured": false
   },
@@ -199,7 +202,7 @@ export const projects: Project[] = [
     "description": "A tool to analyze call records and extract key patterns or statistics.",
     "category": ["Data Analytics"],
     "techStack": ["Python", "Pandas", "Matplotlib"],
-    "image": "/images/projects/call-analyzer.jpg",
+    "image": "/images/projects/not_found.gif",
     "githubUrl": "https://github.com/shivamshar03/CallAnalyzer",
     "featured": false
   },
@@ -209,7 +212,7 @@ export const projects: Project[] = [
     "description": "A chatbot developed for Indore Municipal Corporation to answer citizen queries.",
     "category": ["AI/ML", "NLP", "Hackathons"],
     "techStack": ["Python", "Flask", "Rasa"],
-    "image": "/images/projects/chatbot-imc.jpg",
+    "image": "/images/projects/not_found2.gif",
     "githubUrl": "https://github.com/shivamshar03/chatbot_imc",
     "featured": false
   },
@@ -219,7 +222,7 @@ export const projects: Project[] = [
     "description": "Analyzes Python code for complexity, functions, and structure insights.",
     "category": ["Dev Tools"],
     "techStack": ["Python"],
-    "image": "/images/projects/code-analyser.jpg",
+    "image": "/images/projects/code_analyser.png",
     "githubUrl": "https://github.com/shivamshar03/Code-Analyser",
     "featured": false
   },
@@ -229,7 +232,7 @@ export const projects: Project[] = [
     "description": "A feature-rich Discord bot for CodeX community management.",
     "category": ["Automation", "Discord Bots"],
     "techStack": ["Python", "discord.py"],
-    "image": "/images/projects/codex-discord-bot.jpg",
+    "image": "/images/projects/not_found.gif",
     "githubUrl": "https://github.com/shivamshar03/codex-discord-bot",
     "featured": false
   },
@@ -240,7 +243,7 @@ export const projects: Project[] = [
     "description": "A chatbot application using NLP models to generate intelligent responses.",
     "category": ["AI/ML", "NLP"],
     "techStack": ["Python", "NLTK", "Flask"],
-    "image": "/images/projects/conversational-ai.jpg",
+    "image": "/images/projects/conversational_ai.png",
     "githubUrl": "https://github.com/shivamshar03/conversational-ai",
     "featured": false
   },
@@ -250,7 +253,7 @@ export const projects: Project[] = [
     "description": "A platform designed to guide students on educational paths with personalized recommendations.",
     "category": ["Web Dev", "AI/ML"],
     "techStack": ["Python", "Flask", "HTML", "CSS", "JavaScript"],
-    "image": "/images/projects/edupath.jpg",
+    "image": "/images/projects/not_found2.gif",
     "githubUrl": "https://github.com/shivamshar03/edupath",
     "featured": false
   },
@@ -261,7 +264,7 @@ export const projects: Project[] = [
     "description": "A creative visualization project developed for Independence Day celebrations.",
     "category": ["Creative"],
     "techStack": ["HTML", "CSS", "JavaScript"],
-    "image": "/images/projects/independence-day.jpg",
+    "image": "/images/projects/not_found3.gif",
     "githubUrl": "https://github.com/shivamshar03/Independence-day",
     "featured": false
   },
@@ -271,7 +274,7 @@ export const projects: Project[] = [
     "description": "Extracts and processes invoice data using OCR and NLP techniques.",
     "category": ["AI/ML", "Document Processing"],
     "techStack": ["Python", "Tesseract OCR", "Pandas"],
-    "image": "/images/projects/invoice-extractor.jpg",
+    "image": "/images/projects/invoice.png",
     "githubUrl": "https://github.com/shivamshar03/Invoice-Extractor",
     "featured": false
   },
@@ -281,8 +284,8 @@ export const projects: Project[] = [
     "description": "A personal portfolio website showcasing my work and skills.",
     "category": ["Web Dev"],
     "techStack": ["HTML", "CSS", "JavaScript"],
-    "image": "/images/projects/portfolio.jpg",
-    "githubUrl": "https://github.com/shivamshar03/my_portfolio",
+    "image": "/images/projects/portfolio.png",
+    "githubUrl": "https://github.com/shivamshar03/portfolio-website",
     "featured": false
   },
   {
@@ -291,7 +294,7 @@ export const projects: Project[] = [
     "description": "A tool for managing and organizing lectures and class schedules efficiently.",
     "category": ["Web Dev"],
     "techStack": ["Python", "Flask", "SQLite", "HTML", "CSS"],
-    "image": "/images/projects/lecture-management.jpg",
+    "image": "/images/projects/not_found2.gif",
     "githubUrl": "https://github.com/shivamshar03/lecture-managment",
     "featured": false
   },
@@ -301,7 +304,7 @@ export const projects: Project[] = [
     "description": "A digital marketing utility for campaign management and analytics.",
     "category": ["Marketing Tools", "Web Dev"],
     "techStack": ["JavaScript", "React", "Firebase"],
-    "image": "/images/projects/marketing-tool.jpg",
+    "image": "/images/projects/marketing.png",
     "githubUrl": "https://github.com/shivamshar03/marketing-tool",
     "featured": false
   },
@@ -311,7 +314,7 @@ export const projects: Project[] = [
     "description": "A console-based mini game created as part of a GitHub Copilot learning challenge.",
     "category": ["Game Dev"],
     "techStack": ["C#", ".NET"],
-    "image": "/images/projects/minigame-copilot.jpg",
+    "image": "/images/projects/minigame.png",
     "githubUrl": "https://github.com/shivamshar03/mslearn-challenge-project-create-mini-game-with-copilot",
     "featured": false
   },
@@ -333,7 +336,7 @@ export const projects: Project[] = [
     "description": "A basic real-time chat application built using Python and sockets.",
     "category": ["Networking", "Python"],
     "techStack": ["Python", "Socket"],
-    "image": "/images/projects/simple-chat-app.jpg",
+    "image": "/images/projects/not_found2.gif",
     "githubUrl": "https://github.com/shivamshar03/Simple-chat-app",
     "featured": false
   },
@@ -343,7 +346,7 @@ export const projects: Project[] = [
     "description": "An open-source platform for collaborative problem-solving and competitive programming.",
     "category": ["Open Source", "Education/Tools"],
     "techStack": ["C++", "Python", "Data Structures", "Algorithms"],
-    "image": "/images/projects/binary-brains.jpg",
+    "image": "/images/projects/not_found.gif",
     "githubUrl": "https://github.com/shivamshar03/binary-brains",
     "featured": false
   },
@@ -353,7 +356,7 @@ export const projects: Project[] = [
     "description": "A responsive form used for managing recruitment applications in the codeX community.",
     "category": ["Web Dev"],
     "techStack": ["Java", "HTML", "CSS", "JavaScript"],
-    "image": "/images/projects/recruitment.jpg",
+    "image": "/images/projects/not_found.gif",
     "githubUrl": "https://github.com/shivamshar03/recruitment-form",
     "featured": false
   },
@@ -363,7 +366,7 @@ export const projects: Project[] = [
     "description": "A student portal prototype designed for managing academic and extracurricular activities.",
     "category": ["Web Dev"],
     "techStack": ["HTML", "CSS", "JavaScript"],
-    "image": "/images/projects/collegehub.jpg",
+    "image": "/images/projects/not_found2.gif",
     "githubUrl": "https://github.com/shivamshar03/CollegeHub",
     "featured": false
   },
@@ -373,7 +376,7 @@ export const projects: Project[] = [
     "description": "A collection of Python programs to print different types of patterns.",
     "category": ["Education"],
     "techStack": ["Python"],
-    "image": "/images/projects/pattern-programs.jpg",
+    "image": "/images/projects/not_found3.gif",
     "githubUrl": "https://github.com/shivamshar03/python-pattern-programs",
     "featured": false
   },
@@ -384,7 +387,7 @@ export const projects: Project[] = [
     "description": "A centralized platform for college students to access events, resources, and announcements built by Abhyudaya Coding Club.",
     "category": ["Web Dev"],
     "techStack": ["Python", "Django", "HTML", "CSS", "JavaScript"],
-    "image": "/images/projects/college-jagat.jpg",
+    "image": "/images/projects/not_found.gif",
     "githubUrl": "https://github.com/shivamshar03/college-jagat",
     "featured": false
   },
