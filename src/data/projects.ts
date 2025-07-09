@@ -96,7 +96,7 @@ export const projects: Project[] = [
     "description": "A Python-based support ticketing system to manage and resolve user issues.",
     "category": ["Web Dev", "Automation"],
     "techStack": ["Python", "Flask", "SQLite", "HTML", "CSS", "JavaScript"],
-    "image": "/images/projects/ticket_support.png",
+    "image": "/images/projects/Ticket_support.png",
     "githubUrl": "https://github.com/shivamshar03/Ticket_support",
     "featured": false
   },
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     "description": "An attendance system that uses facial recognition to log attendance automatically.",
     "category": ["AI/ML", "Computer Vision"],
     "techStack": ["Python", "OpenCV", "face_recognition"],
-    "image": "/images/projects/face_attendance.png",
+    "image": "/images/projects/face_attendance.PNG",
     "githubUrl": "https://github.com/shivamshar03/Face_Identification_Attendance_System",
     "featured": false
   },
@@ -326,7 +326,7 @@ export const projects: Project[] = [
     "description": "A tool for automatically analyzing and shortlisting resumes based on job descriptions.",
     "category": ["AI/ML", "NLP"],
     "techStack": ["Python", "Pandas", "NLP"],
-    "image": "/images/projects/resume-screening.jpg",
+    "image": "/images/projects/resume-screening.jpeg",
     "githubUrl": "https://github.com/shivamshar03/Resume-Screening-Assistance",
     "featured": false
   },
