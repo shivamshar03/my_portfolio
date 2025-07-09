@@ -61,7 +61,7 @@ export const projects: Project[] = [
     "description": "Analyzes and visualizes developer timesheet data for productivity insights.",
     "category": ["AI/ML", "Data Analytics"],
     "techStack": ["Python", "Pandas", "Matplotlib", "Streamlit"],
-    "image": "/images/projects/timesheet.png",
+    "image": "/images/projects/timesheet.PNG",
     "githubUrl": "https://github.com/shivamshar03/timesheet_analyser",
     "demoUrl": "https://timesheetanalyser.streamlit.app/",
     "featured": false
@@ -117,7 +117,7 @@ export const projects: Project[] = [
     "description": "My personal portfolio website showcasing my projects and skills.",
     "category": ["Web Dev"],
     "techStack": ["HTML", "CSS", "JavaScript"],
-    "image": "/images/projects/portfolio.png",
+    "image": "/images/projects/portfolio.PNG",
     "githubUrl": "https://github.com/shivamshar03/my_portfolio",
     "demoUrl": "https://shivam-sharma.vercel.app/",
     "featured": false
@@ -274,7 +274,7 @@ export const projects: Project[] = [
     "description": "Extracts and processes invoice data using OCR and NLP techniques.",
     "category": ["AI/ML", "Document Processing"],
     "techStack": ["Python", "Tesseract OCR", "Pandas"],
-    "image": "/images/projects/invoice.png",
+    "image": "/images/projects/invoice.PNG",
     "githubUrl": "https://github.com/shivamshar03/Invoice-Extractor",
     "featured": false
   },
@@ -284,7 +284,7 @@ export const projects: Project[] = [
     "description": "A personal portfolio website showcasing my work and skills.",
     "category": ["Web Dev"],
     "techStack": ["HTML", "CSS", "JavaScript"],
-    "image": "/images/projects/portfolio.png",
+    "image": "/images/projects/portfolio.PNG",
     "githubUrl": "https://github.com/shivamshar03/portfolio-website",
     "featured": false
   },
@@ -314,7 +314,7 @@ export const projects: Project[] = [
     "description": "A console-based mini game created as part of a GitHub Copilot learning challenge.",
     "category": ["Game Dev"],
     "techStack": ["C#", ".NET"],
-    "image": "/images/projects/minigame.png",
+    "image": "/images/projects/minigame.PNG",
     "githubUrl": "https://github.com/shivamshar03/mslearn-challenge-project-create-mini-game-with-copilot",
     "featured": false
   },
