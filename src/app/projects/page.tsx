@@ -46,10 +46,7 @@ export default function ProjectsPage() {
             whileHover={{ y: -5 }}
           >
             <div className="h-48 bg-gray-200 dark:bg-gray-700 relative">
-              {/* This would be replaced with actual images */}
-              <div className="absolute inset-0 flex items-center justify-center text-gray-500 dark:text-gray-400">
-                {project.title} Image Placeholder
-              </div>
+              <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover" />
             </div>
             <div className="p-4">
               <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
@@ -83,9 +80,11 @@ export default function ProjectsPage() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="h-64 bg-gray-200 dark:bg-gray-700 relative">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-500 dark:text-gray-400">
-                {selectedProject.title} Image Placeholder
-              </div>
+              <img
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
             </div>
             <div className="p-6">
               <h2 className="text-2xl font-bold mb-2">{selectedProject.title}</h2>
