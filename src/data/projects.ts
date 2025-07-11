@@ -128,7 +128,7 @@ export const projects: Project[] = [
     "description": "Generates images from textual prompts using deep learning and NLP models. Built for a hackathon challenge.",
     "category": ["AI/ML", "Computer Vision", "Hackathons"],
     "techStack": ["Python", "TensorFlow", "NLP", "Computer Vision"],
-    "image": "/images/projects/not_found.gif",
+    "image": "/images/projects/not_found2.gif",
     "githubUrl": "https://github.com/shivamshar03/text-to-image-",
     "featured": false
   },
@@ -149,7 +149,7 @@ export const projects: Project[] = [
     "description": "A classic ping pong game developed using the Kivy framework in Python.",
     "category": ["Game Dev"],
     "techStack": ["Python", "Kivy"],
-    "image": "/images/projects/not_found2.gif",
+    "image": "/images/projects/not_found.gif",
     "githubUrl": "https://github.com/shivamshar03/ping-pong-game",
     "featured": false
   },
@@ -202,7 +202,7 @@ export const projects: Project[] = [
     "description": "A tool to analyze call records and extract key patterns or statistics.",
     "category": ["Data Analytics"],
     "techStack": ["Python", "Pandas", "Matplotlib"],
-    "image": "/images/projects/not_found.gif",
+    "image": "/images/projects/call_analyser.png",
     "githubUrl": "https://github.com/shivamshar03/CallAnalyzer",
     "featured": false
   },
@@ -228,12 +228,13 @@ export const projects: Project[] = [
   },
     {
     "id": 14,
-    "title": "CodeX Community Discord Bot",
-    "description": "A feature-rich Discord bot for CodeX community management.",
-    "category": ["Automation", "Discord Bots"],
-    "techStack": ["Python", "discord.py"],
-    "image": "/images/projects/not_found.gif",
-    "githubUrl": "https://github.com/shivamshar03/codex-discord-bot",
+    "title": "Youtube Script Generator",
+    "description": "Generates YouTube video scripts based on user input and predefined templates.",
+    "category": ["AI/ML", "NLP"],
+    "techStack": ["Python", "Flask", "HTML", "CSS", "JavaScript"],
+    "image": "/images/projects/yt_script.PNG",
+    "githubUrl": "https://github.com/shivamshar03/youtube-script-generator",
+    "demoUrl": "https://youtube-script-writer-ai.streamlit.app/",
     "featured": false
   },
 
@@ -253,7 +254,7 @@ export const projects: Project[] = [
     "description": "A platform designed to guide students on educational paths with personalized recommendations.",
     "category": ["Web Dev", "AI/ML"],
     "techStack": ["Python", "Flask", "HTML", "CSS", "JavaScript"],
-    "image": "/images/projects/not_found2.gif",
+    "image": "/images/projects/not_found.gif",
     "githubUrl": "https://github.com/shivamshar03/edupath",
     "featured": false
   },
@@ -336,17 +337,17 @@ export const projects: Project[] = [
     "description": "A basic real-time chat application built using Python and sockets.",
     "category": ["Networking", "Python"],
     "techStack": ["Python", "Socket"],
-    "image": "/images/projects/not_found2.gif",
+    "image": "/images/projects/not_found.gif",
     "githubUrl": "https://github.com/shivamshar03/Simple-chat-app",
     "featured": false
   },
    {
     "id": 21,
-    "title": "Binary Brains",
+    "title": "Career Enlighten",
     "description": "An open-source platform for collaborative problem-solving and competitive programming.",
     "category": ["Open Source", "Education/Tools"],
     "techStack": ["C++", "Python", "Data Structures", "Algorithms"],
-    "image": "/images/projects/not_found.gif",
+    "image": "/images/projects/binary_brain.jpeg",
     "githubUrl": "https://github.com/shivamshar03/binary-brains",
     "featured": false
   },
@@ -356,7 +357,7 @@ export const projects: Project[] = [
     "description": "A responsive form used for managing recruitment applications in the codeX community.",
     "category": ["Web Dev"],
     "techStack": ["Java", "HTML", "CSS", "JavaScript"],
-    "image": "/images/projects/not_found.gif",
+    "image": "/images/projects/recruitment_form.PNG",
     "githubUrl": "https://github.com/shivamshar03/recruitment-form",
     "featured": false
   },
@@ -366,19 +367,20 @@ export const projects: Project[] = [
     "description": "A student portal prototype designed for managing academic and extracurricular activities.",
     "category": ["Web Dev"],
     "techStack": ["HTML", "CSS", "JavaScript"],
-    "image": "/images/projects/not_found2.gif",
+    "image": "/images/projects/college_hub.PNG",
     "githubUrl": "https://github.com/shivamshar03/CollegeHub",
     "featured": false
   },
-    {
-    "id": 37,
-    "title": "Python Pattern Programs",
-    "description": "A collection of Python programs to print different types of patterns.",
-    "category": ["Education"],
-    "techStack": ["Python"],
-    "image": "/images/projects/not_found3.gif",
-    "githubUrl": "https://github.com/shivamshar03/python-pattern-programs",
-    "featured": false
+  {
+    "id" : 37,
+    "title": "Youtube Downloader",
+    "description": "A simple Python script to download YouTube videos using the pytube library.",
+    "category": ["Automation", "Web Scraping"],
+    "techStack": ["Python", "pytube"],
+    "image": "/images/projects/download-youtube.jpg",
+    "githubUrl": "https://github.com/shivamshar03/youtube-downloader",
+    "demoUrl": "https://youtube-downloader-shivam.streamlit.app/",
+    "featured": false 
   },
   
     {
@@ -387,7 +389,7 @@ export const projects: Project[] = [
     "description": "A centralized platform for college students to access events, resources, and announcements built by Abhyudaya Coding Club.",
     "category": ["Web Dev"],
     "techStack": ["Python", "Django", "HTML", "CSS", "JavaScript"],
-    "image": "/images/projects/not_found.gif",
+    "image": "/images/projects/college_jagat.PNG",
     "githubUrl": "https://github.com/shivamshar03/college-jagat",
     "featured": false
   },
