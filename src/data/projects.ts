@@ -280,13 +280,13 @@ export const projects: Project[] = [
     "featured": false
   },
    {
-    "id": 33,
-    "title": "My Portfolio",
-    "description": "A personal portfolio website showcasing my work and skills.",
-    "category": ["Web Dev"],
-    "techStack": ["HTML", "CSS", "JavaScript"],
-    "image": "/images/projects/portfolio.PNG",
-    "githubUrl": "https://github.com/shivamshar03/portfolio-website",
+    "id": 27,
+    "title": "URL Extractor",
+    "description": "Extracts URLs from various sources and provides insights on their usage.",
+    "category": ["AI/ML", "NLP"],
+    "techStack": ["Python", "Flask", "BeautifulSoup"],
+    "image": "/images/projects/URL.PNG",
+    "githubUrl": "https://github.com/shivamshar03/url-extractor",
     "featured": false
   },
   {
@@ -349,6 +349,7 @@ export const projects: Project[] = [
     "techStack": ["C++", "Python", "Data Structures", "Algorithms"],
     "image": "/images/projects/binary_brain.jpeg",
     "githubUrl": "https://github.com/shivamshar03/binary-brains",
+    "demoUrl": "https://careerenlighten.vercel.app/",
     "featured": false
   },
     {
