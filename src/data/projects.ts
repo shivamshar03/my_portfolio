@@ -258,6 +258,16 @@ export const projects: Project[] = [
     "githubUrl": "https://github.com/shivamshar03/edupath",
     "featured": false
   },
+    {
+    "id": 38,
+    "title": "Form Automation",
+    "description": "A tool to automate form filling and submission using browser extensions.",
+    "category": ["Automation", "Web"],
+    "techStack": ["JavaScript", "HTML", "CSS", "Python", "Selenium"],
+    "image": "/images/projects/form_automation.jpeg",
+    "githubUrl": "https://github.com/shivamshar03/AutoFormX",
+    "featured": false
+  },
 
   {
     "id": 28,
@@ -394,5 +404,6 @@ export const projects: Project[] = [
     "githubUrl": "https://github.com/shivamshar03/college-jagat",
     "featured": false
   },
+
 
 ];  
