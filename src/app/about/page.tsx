@@ -2,9 +2,19 @@
 
 import Image from 'next/image';
 import React, { useRef } from "react";
-import { motion, useScroll, useInView, useTransform } from "framer-motion";
+import { motion, useScroll, useInView } from "framer-motion";
 
-const Details = ({ position, company, companyLink, time, work, index }) => {
+// Define interface for Details component props
+interface DetailsProps {
+  position: string;
+  company: string;
+  companyLink: string;
+  time: string;
+  work: string;
+  index: number;
+}
+
+const Details: React.FC<DetailsProps> = ({ position, company, companyLink, time, work, index }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.3 });
 
