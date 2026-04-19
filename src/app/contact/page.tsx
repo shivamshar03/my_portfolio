@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
 import { HiMail, HiPhone, HiLocationMarker } from 'react-icons/hi';
 import emailjs from '@emailjs/browser';
+import ScrollReveal from '@/components/ScrollReveal';
 
 interface FormData {
   name: string;
@@ -24,9 +25,7 @@ export default function ContactPage() {
     message: string;
   } | null>(null);
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -37,34 +36,26 @@ export default function ContactPage() {
     setSubmitStatus(null);
 
     try {
-      // Replace with your actual EmailJS service, template, and user IDs
       await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        process.env.NEXT_PUBLIC_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_CONTACT_TEMPLATE_ID as string,
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
         },
-        'YOUR_PUBLIC_KEY'
+        process.env.NEXT_PUBLIC_PUBLIC_KEY as string
       );
 
       setSubmitStatus({
         success: true,
         message: 'Thank you! Your message has been sent successfully.',
       });
-
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        message: '',
-      });
+      setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       setSubmitStatus({
         success: false,
-        message:
-          'Oops! Something went wrong. Please try again or contact me directly.',
+        message: 'Oops! Something went wrong. Please try again or contact me directly.',
       });
       console.error('Error sending email:', error);
     } finally {
@@ -73,169 +64,185 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="container mx-auto py-16 px-4">
-      <h1 className="text-4xl font-bold mb-8">Get in Touch</h1>
+    <div className="min-h-screen">
+      <section className="relative py-20">
+        <div className="absolute inset-0 grid-pattern opacity-20" />
+        <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[120px]" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <motion.div
-            className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-2xl font-semibold mb-4">Contact Information</h2>
-            <div className="space-y-4">
-              <div className="flex items-center">
-                <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
-                  <HiMail className="text-blue-600 dark:text-blue-400 text-xl" />
-                </div>
-                <div>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">Email</p>
-                  <p className="font-medium">shivamshar0310@gmail.com</p>
-                </div>
-              </div>
+        <div className="container mx-auto px-6 relative">
+          <ScrollReveal>
+            <div className="mb-12">
+              <span className="text-xs font-mono text-cyan-400 tracking-widest uppercase">Contact</span>
+              <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-4 text-slate-100">
+                Get in <span className="gradient-text">Touch</span>
+              </h1>
+              <p className="text-slate-500 max-w-lg">
+                Have an idea to discuss? Want to collaborate or just say hi? I&apos;d love to hear from you.
+              </p>
+            </div>
+          </ScrollReveal>
 
-              <div className="flex items-center">
-                <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
-                  <HiPhone className="text-blue-600 dark:text-blue-400 text-xl" />
-                </div>
-                <div>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">Phone</p>
-                  <p className="font-medium">+91 (Contact Number)</p>
-                </div>
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Left Column */}
+            <div className="space-y-6">
+              {/* Contact Info */}
+              <ScrollReveal variant="fadeLeft">
+                <div className="glass-card rounded-2xl p-6">
+                  <h2 className="text-xl font-semibold text-slate-100 mb-6">Contact Information</h2>
+                  <div className="space-y-5">
+                    {[
+                      { icon: HiMail, label: 'Email', value: 'shivamsharma.py@gmail.com', href: 'mailto:shivamsharma.py@gmail.com' },
+                      { icon: HiPhone, label: 'Phone', value: '+91 6266061914', href: 'tel:+916266061914' },
+                      { icon: HiLocationMarker, label: 'Location', value: 'Indore, India', href: null },
+                    ].map((item) => (
+                      <div key={item.label} className="flex items-center gap-4 group">
+                        <div className="p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 group-hover:bg-cyan-500/20 transition-all">
+                          <item.icon className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <p className="text-xs text-slate-500 font-mono">{item.label}</p>
+                          {item.href ? (
+                            <a href={item.href} className="text-sm text-slate-200 hover:text-cyan-400 transition-colors">
+                              {item.value}
+                            </a>
+                          ) : (
+                            <p className="text-sm text-slate-200">{item.value}</p>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
 
-              <div className="flex items-center">
-                <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
-                  <HiLocationMarker className="text-blue-600 dark:text-blue-400 text-xl" />
+                  <div className="mt-6 pt-6 border-t border-white/[0.04]">
+                    <h3 className="text-sm font-semibold text-slate-300 mb-3">Connect</h3>
+                    <div className="flex gap-2">
+                      {[
+                        { href: 'https://www.linkedin.com/in/shivam-sharma-ab489721b/', icon: FaLinkedin },
+                        { href: 'https://github.com/shivamshar03', icon: FaGithub },
+                        { href: 'https://x.com/ShivamShar03', icon: FaTwitter },
+                      ].map((s) => (
+                        <a
+                          key={s.href}
+                          href={s.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06] text-slate-400 hover:text-cyan-400 hover:border-cyan-500/30 hover:bg-cyan-500/5 transition-all duration-300"
+                        >
+                          <s.icon className="w-4 h-4" />
+                        </a>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">Location</p>
-                  <p className="font-medium">Indore, India</p>
+              </ScrollReveal>
+
+              {/* Mentorship Card */}
+              <ScrollReveal variant="fadeLeft" delay={0.2}>
+                <div className="glass-card rounded-2xl p-6 border-purple-500/20">
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl">🚀</span>
+                    <div>
+                      <h3 className="text-lg font-semibold text-purple-400 mb-2">Free 1:1 Mentorship</h3>
+                      <p className="text-sm text-slate-400 leading-relaxed">
+                        Looking for guidance or stuck with something? I offer free 1:1 mentorship sessions.
+                        Just mention <span className="text-purple-400 font-medium">&quot;Mentorship&quot;</span> in your message!
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </ScrollReveal>
             </div>
 
-            <div className="mt-8">
-              <h3 className="text-lg font-semibold mb-4">Connect With Me</h3>
-              <div className="flex space-x-4">
-                <a
-                  href="https://www.linkedin.com/in/shivam-sharma-ab489721b/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full hover:bg-blue-100 dark:hover:bg-blue-900 transition-colors"
-                >
-                  <FaLinkedin className="text-blue-600 dark:text-blue-400 text-xl" />
-                </a>
-                <a
-                  href="https://github.com/shivamshar03"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
-                >
-                  <FaGithub className="text-gray-800 dark:text-gray-200 text-xl" />
-                </a>
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full hover:bg-blue-100 dark:hover:bg-blue-900 transition-colors"
-                >
-                  <FaTwitter className="text-blue-500 text-xl" />
-                </a>
-              </div>
-            </div>
-          </motion.div>
+            {/* Right Column - Form */}
+            <ScrollReveal variant="fadeRight" delay={0.1}>
+              <motion.div
+                className="glass-card rounded-2xl p-6"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="text-xl font-semibold text-slate-100 mb-6">Send a Message</h2>
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div>
+                    <label htmlFor="name" className="block text-xs font-mono text-slate-500 mb-2">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-slate-100 text-sm placeholder-slate-600 focus:outline-none focus:border-cyan-500/40 focus:ring-1 focus:ring-cyan-500/20 transition-all"
+                      placeholder="Your Name"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-xs font-mono text-slate-500 mb-2">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-slate-100 text-sm placeholder-slate-600 focus:outline-none focus:border-cyan-500/40 focus:ring-1 focus:ring-cyan-500/20 transition-all"
+                      placeholder="you@example.com"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-xs font-mono text-slate-500 mb-2">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      rows={5}
+                      className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-slate-100 text-sm placeholder-slate-600 focus:outline-none focus:border-cyan-500/40 focus:ring-1 focus:ring-cyan-500/20 transition-all resize-none"
+                      placeholder="How can I help you?"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium text-sm hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                        </svg>
+                        Sending...
+                      </span>
+                    ) : (
+                      'Send Message →'
+                    )}
+                  </button>
+
+                  {submitStatus && (
+                    <div
+                      className={`p-4 rounded-xl text-sm ${
+                        submitStatus.success
+                          ? 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400'
+                          : 'bg-red-500/10 border border-red-500/20 text-red-400'
+                      }`}
+                    >
+                      {submitStatus.message}
+                    </div>
+                  )}
+                </form>
+              </motion.div>
+            </ScrollReveal>
+          </div>
         </div>
-
-        <motion.div
-          className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <h2 className="text-2xl font-semibold mb-4">Send Me a Message</h2>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
-                placeholder="Your Name"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
-                placeholder="your.email@example.com"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={5}
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
-                placeholder="How can I help you?"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
-            </button>
-
-            {submitStatus && (
-              <div
-                className={`mt-4 p-3 rounded-md ${
-                  submitStatus.success
-                    ? 'bg-green-50 text-green-800 dark:bg-green-900 dark:text-green-200'
-                    : 'bg-red-50 text-red-800 dark:bg-red-900 dark:text-red-200'
-                }`}
-              >
-                {submitStatus.message}
-              </div>
-            )}
-          </form>
-        </motion.div>
-      </div>
+      </section>
     </div>
   );
-} 
+}
