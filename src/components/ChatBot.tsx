@@ -3,7 +3,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaRobot, FaTimes, FaPaperPlane } from 'react-icons/fa';
-import { portfolioContext } from '@/data/portfolioContext';
 
 interface Message {
   role: 'user' | 'bot';
